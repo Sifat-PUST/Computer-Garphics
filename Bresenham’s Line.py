@@ -33,5 +33,4 @@ x_coords,y_coords=Bresenham(x1, y1, x2, y2)
 
 plt.plot(x_coords,y_coords)
 plt.grid(True)
-plt.gca().set_aspect('equal', adjustable='box')
 plt.show()
