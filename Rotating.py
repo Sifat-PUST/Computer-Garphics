@@ -1,13 +1,12 @@
 import matplotlib.pyplot as plt
 import numpy as np
-def Scaling(x,y,dx,dy):
-    xn=x*dx
-    yn=y*dy
+def Scalling(x,y,t,h,k):
+    xn=(x-h)*np.cos(np.radians(t))-(y-k)*np.sin(np.radians(t))+h
+    yn=(y-k)*np.cos(np.radians(t))+(x-h)*np.sin(np.radians(t))+k
     return xn,yn
 
 n=int(input("How many points? :"))
 x,y=np.array([]),np.array([])
-
 
 for i in range(n):
     print("Point "+str(i+1)+" :")
@@ -17,10 +16,15 @@ for i in range(n):
     y=np.append(y,l)
 x=np.append(x,x[0])
 y=np.append(y,y[0])
-print("Enter Scaling Parameters :")
-dx=int(input("dx:"))
-dy=int(input("dy:"))
-xn,yn=Scaling(x,y,dx,dy)
+
+
+print("Enter Angle of Rotation :")
+t=int(input("Thita :"))
+print('Enter Base point of Rotation :')
+h=int(input('h :'))
+k=int(input('k :'))
+
+xn,yn=Scalling(x,y,t,h,k)
 
 print(x)
 print(y)
